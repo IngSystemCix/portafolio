@@ -1,0 +1,23 @@
+---
+import Badge from "../components/Badge.astro";
+import Header from "../components/Header.astro";
+import Image from "../components/Image.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="IngSystemCix | Porfolio">
+	<Header></Header>
+	<main class="w-full">
+		<div class="rounded-lg border-4 border-solid border-l-red-600 border-r-transparent border-t-transparent border-b-transparent px-6">
+			<div class="flex justify-start items-center gap-6">
+				<Image path="/img/photo.png" alt="Foto de Juan Bladimir Romero Collazos"></Image>
+				<Badge>Disponible</Badge>
+			</div>
+			<p class="text-2xl sm:text-3xl mt-3">Hey <span class="wave-hand">👋</span>, soy Juan Bladimir Romero Collazos</p>
+			<br>
+			<p class="text-sm sm:text-xl w-full sm:w-96 text-justify">
+				+3 años de experiencia. <span class="text-yellow-500">Ingeniero en sistemas y creador de contenido</span>. De Perú, Lambayeque 🇵🇪. Especializado en crear aplicaciones novedosas.
+			</p>
+		</div>
+	</main>
+</Layout>

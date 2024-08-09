@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply w-full h-lvh px-4 sm:px-10 md:px-20 lg:px-32 xl:px-40 2xl:px-64 py-4 flex flex-col justify-start items-center gap-10;
+        background: radial-gradient(circle at top, rgb(2 6 63), rgb(15 23 42), rgb(0, 0, 0));
+        background-size: cover;
+    }
+    h1 {
+        font-family: "Oleo Script", system-ui;
+        font-style: normal;
+        @apply text-slate-900 font-normal cursor-pointer select-none;
+    }
+    p {
+        font-family: "Ubuntu", sans-serif;
+        font-style: normal;
+        @apply text-white font-normal;
+    }   
+}
+
+@layer components {
+    header {
+        @apply w-full flex py-2 px-6 rounded-full bg-slate-300 justify-between items-center;
+    
+        & .logo {
+            @apply font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
+        }
+    
+        & div {
+            @apply flex justify-center items-center gap-1 sm:gap-6;
+    
+            & .btn_header {
+                @apply text-slate-900 flex justify-center items-center gap-1 px-3 py-2 font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
+                & span {
+                    @apply hidden sm:flex;
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    @keyframes wave {
+        0% { transform: rotate(0deg); }
+        10% { transform: rotate(14deg); }
+        20% { transform: rotate(-8deg); }
+        30% { transform: rotate(14deg); }
+        40% { transform: rotate(-4deg); }
+        50% { transform: rotate(10deg); }
+        60% { transform: rotate(0deg); }
+        100% { transform: rotate(0deg); }
+    }
+    
+    .wave-hand {
+        display: inline-block;
+        animation: wave 2s infinite;
+        transform-origin: 70% 70%;
+    }
+}
