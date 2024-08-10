@@ -1,0 +1,42 @@
+---
+
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Agosto 2024",
+        title: "ArtBlend",
+        description: "Desarrollé 'ArtBlend', una innovadora herramienta gráfica diseñada para facilitar la creación de dibujos, diseños y el uso como pizarra interactiva. Orientada a artistas, diseñadores y educadores, esta plataforma proporciona una experiencia fluida y versátil que permite la materialización de ideas visuales, a la vez que fomenta la colaboración creativa.",
+        link: "https://github.com/IngSystemCix/ArtBlend",
+        isTag : true,
+        tag: "Actual"
+    },
+    {
+        date: "Junio 2024",
+        title: "Calculator VLSM",
+        description: "Creé la 'Calculator VLSM', una herramienta clave para administradores de red y profesionales de TI. Esta calculadora simplifica el enmascaramiento de subredes de longitud variable, optimizando la asignación de direcciones IP y mejorando la eficiencia en la planificación de redes.",
+        link: "https://github.com/IngSystemCix/Calculator_VLSM",
+        isTag : false
+    },
+    {
+        date: "Junio 2024",
+        title: "Líder de la comunidad ManyToOne",
+        description: "Como líder de la comunidad 'ManyToOne' en la Facultad de Ingeniería de Sistemas de la Universidad Tecnológica del Perú, impulsé iniciativas que promovieron el aprendizaje y la colaboración entre estudiantes y profesionales del sector, fortaleciendo la red de contactos y el intercambio de conocimientos.",
+        link: "https://github.com/mtocommunity",
+        isTag : true,
+        tag : "Actual"
+    }
+];
+
+
+---
+
+<ol class="relative border-s border-blue-500">
+  {
+    EXPERIENCE.map(experiencia => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {...experiencia} /> 
+        </li>
+    ))
+  }
+</ol>

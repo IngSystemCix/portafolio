@@ -1,23 +1,72 @@
 ---
 import Badge from "../components/Badge.astro";
 import Header from "../components/Header.astro";
+import Github from "../components/icons/Github.astro";
+import Linkedin from "../components/icons/Linkedin.astro";
+import Youtube from "../components/icons/Youtube.astro";
 import Image from "../components/Image.astro";
+import Social from "../components/Social.astro";
+import TimelineExperience from "../components/TimelineExperience.astro";
+import Briefcase from "../components/icons/Briefcase.astro"
 import Layout from "../layouts/Layout.astro";
+import Album from "../components/icons/Album.astro";
+import ContainerProject from "../components/ContainerProject.astro";
+import User from "../components/icons/User.astro";
 ---
 
 <Layout title="IngSystemCix | Porfolio">
 	<Header></Header>
-	<main class="w-full">
-		<div class="rounded-lg border-4 border-solid border-l-red-600 border-r-transparent border-t-transparent border-b-transparent px-6">
-			<div class="flex justify-start items-center gap-6">
-				<Image path="/img/photo.png" alt="Foto de Juan Bladimir Romero Collazos"></Image>
-				<Badge>Disponible</Badge>
+	<main class="w-full mt-20">
+		<div class="w-full flex-auto sm:flex justify-center items-center rounded-lg border-4 border-solid border-l-red-600 border-r-transparent border-t-transparent border-b-transparent pl-6">
+			<div class="w-full">
+				<div class="flex justify-start items-center gap-6">
+					<Image path="/img/photo.png" alt="Foto de Juan Bladimir Romero Collazos"></Image>
+					<a href="https://www.linkedin.com/in/juan-bladimir-romero-collazos/"><Badge>Disponible</Badge></a>
+				</div>
+				<p class="text-2xl sm:text-3xl mt-3">Hey <span class="wave-hand">👋</span>, soy Juan Bladimir Romero Collazos</p>
+				<br>
+				<p class="text-sm sm:text-xl w-full text-justify">
+					+3 años de experiencia. <span class="text-yellow-500">Ingeniero en sistemas y creador de contenido</span>. De Perú, Lambayeque 🇵🇪. Especializado en crear aplicaciones novedosas.
+				</p>
 			</div>
-			<p class="text-2xl sm:text-3xl mt-3">Hey <span class="wave-hand">👋</span>, soy Juan Bladimir Romero Collazos</p>
 			<br>
-			<p class="text-sm sm:text-xl w-full sm:w-96 text-justify">
-				+3 años de experiencia. <span class="text-yellow-500">Ingeniero en sistemas y creador de contenido</span>. De Perú, Lambayeque 🇵🇪. Especializado en crear aplicaciones novedosas.
-			</p>
+			<ul class="w-full flex flex-row sm:flex-col justify-center items-end gap-6">
+				<Social context="Github" color="bg-slate-800" hover="bg-slate-700" href="https://github.com/IngSystemCix?tab=repositories">
+					<Github/>
+				</Social>
+				<Social context="Linkedin" color="bg-blue-600" hover="bg-blue-500" href="https://www.linkedin.com/in/juan-bladimir-romero-collazos/">
+					<Linkedin/>
+				</Social>
+				<Social context="Youtube" color="bg-red-600" hover="bg-red-500" href="https://www.youtube.com/@IngSystemCix">
+					<Youtube/>
+				</Social>
+			</ul>
 		</div>
 	</main>
+	<section class="w-full" id="experiencia">
+		<div class="text-white font-bold flex justify-start items-center gap-4">
+			<Briefcase/> <h2 class="text-2xl">Experiencia</h2>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<TimelineExperience/>
+	</section>
+	<section class="w-full" id="proyectos">
+		<div class="text-white font-bold flex justify-start items-center gap-4">
+			<Album/> <h2 class="text-2xl">Proyectos</h2>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<ContainerProject/>
+	</section>
+	<section class="w-full" id="sobre-mi">
+		<div class="text-white font-bold flex justify-start items-center gap-4">
+			<User/> <h2 class="text-2xl">Sobre mi</h2>
+		</div>
+		<br>
+		<hr>
+		<br>
+	</section>
 </Layout>

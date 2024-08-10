@@ -6,10 +6,14 @@
 @tailwind utilities;
 
 @layer base {
+    
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         @apply w-full h-lvh px-4 sm:px-10 md:px-20 lg:px-32 xl:px-40 2xl:px-64 py-4 flex flex-col justify-start items-center gap-10;
-        background: radial-gradient(circle at top, rgb(2 6 63), rgb(15 23 42), rgb(0, 0, 0));
-        background-size: cover;
+        background-color: #0a0a0a;
     }
     h1 {
         font-family: "Oleo Script", system-ui;
@@ -20,22 +24,28 @@
         font-family: "Ubuntu", sans-serif;
         font-style: normal;
         @apply text-white font-normal;
-    }   
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
 }
 
 @layer components {
     header {
-        @apply w-full flex py-2 px-6 rounded-full bg-slate-300 justify-between items-center;
+        @apply w-full flex py-2 px-6 rounded-full bg-slate-300/5 justify-between items-center;
     
         & .logo {
-            @apply font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
+            @apply text-white font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
         }
     
         & div {
             @apply flex justify-center items-center gap-1 sm:gap-6;
     
             & .btn_header {
-                @apply text-slate-900 flex justify-center items-center gap-1 px-3 py-2 font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
+                @apply text-white flex justify-center items-center gap-1 px-3 py-2 font-bold hover:text-blue-600 transition-all ease-in-out delay-200;
                 & span {
                     @apply hidden sm:flex;
                 }

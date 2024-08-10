@@ -1,0 +1,17 @@
+---
+interface Props {
+  context : string;
+  color : string;
+  hover : string;
+  href : string;
+}
+const { context, color, hover, href } = Astro.props as Props;
+---
+
+<li class={`w-full sm:w-96 rounded-full ${color} hover:${hover} cursor-pointer px-3 py-2 text-white font-bold`}>
+    <a href={`${href}`} class="flex justify-center items-center gap-1" target="_blank" rel="noopener noreferrer">
+        <slot/>
+        <span class="hidden sm:block">{context}</span>
+    </a>
+</li>
+

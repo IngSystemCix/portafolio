@@ -1,0 +1,36 @@
+---
+import Link from "./icons/Link.astro";
+import Tag from "./Tag.astro";
+
+interface Props {
+    date : string;
+    title : string;
+    description : string;
+    link : string;
+    isTag :  boolean;
+    tag ?: string;
+}
+
+const { date, title, description, link, isTag, tag } = Astro.props as Props;
+
+---
+
+<div
+  class="absolute w-3 h-3 bg-blue-500 rounded-full mt-1.5 -start-1.5 border border-blue-500 dark:border-gray-900 dark:bg-gray-700"
+>
+</div>
+<time class="mb-1 text-sm font-normal leading-none text-red-500"
+  >{date}</time
+>
+<h3 class="text-lg font-semibold text-yellow-500 flex justify-start items-center gap-6">
+  {title}
+  {isTag ? <Tag>{tag}</Tag> : null}
+</h3>
+<p class="mb-4 text-base font-normal text-white text-pretty">
+  {description}
+</p>
+<a
+  href={`${link}`}
+  class="inline-flex items-center px-4 py-2 gap-4 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+  >Leer más <Link />
+</a>

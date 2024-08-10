@@ -1,0 +1,44 @@
+---
+
+import CardProject from "./CardProject.astro";
+
+const PROJECT = [
+    {
+        src: "/public/img/backgammon.png",
+        title: "Backgammon",
+        description: "Un clásico juego de backgammon desarrollado en Java para consolas que ofrece una experiencia estratégica por turnos en la que dos jugadores compiten para mover sus piezas a su zona segura. Disfruta del desafío de este antiguo juego de mesa con una interfaz sencilla y controles intuitivos.",
+        href : "https://github.com/IngSystemCix/backgammon",
+        isTag : true,
+        tag: "Actual"
+    },
+    {
+        src: "/public/img/artblend.png",
+        title: "ArtBlend",
+        description: "ArtBlend es una innovadora herramienta gráfica que permite a los usuarios crear dibujos, realizar diseños y utilizarla como una pizarra interactiva. Ideal para artistas, diseñadores y educadores, ArtBlend ofrece una experiencia fluida y versátil para dar vida a sus ideas visuales y facilitar la colaboración creativa.",
+        href : "https://github.com/IngSystemCix/ArtBlend",
+        isTag : true,
+        tag: "Actual"
+    },
+    {
+        src: "/public/img/artblend.png",
+        title: "ArtBlend",
+        description: "ArtBlend es una innovadora herramienta gráfica que permite a los usuarios crear dibujos, realizar diseños y utilizarla como una pizarra interactiva. Ideal para artistas, diseñadores y educadores, ArtBlend ofrece una experiencia fluida y versátil para dar vida a sus ideas visuales y facilitar la colaboración creativa.",
+        href : "https://github.com/IngSystemCix/ArtBlend",
+        isTag : false
+    },
+    {
+        src: "/public/img/artblend.png",
+        title: "ArtBlend",
+        description: "ArtBlend es una innovadora herramienta gráfica que permite a los usuarios crear dibujos, realizar diseños y utilizarla como una pizarra interactiva. Ideal para artistas, diseñadores y educadores, ArtBlend ofrece una experiencia fluida y versátil para dar vida a sus ideas visuales y facilitar la colaboración creativa.",
+        href : "https://github.com/IngSystemCix/ArtBlend",
+        isTag : false
+    }
+]
+
+---
+
+<div class="w-full grid grid-cols-1 sm:grid-cols-4 gap-10">
+    {PROJECT.map(project => (
+        <CardProject {...project} />
+    ))}
+</div>
